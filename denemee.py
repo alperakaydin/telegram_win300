@@ -1,8 +1,9 @@
-import pprint
+
 from telethon import TelegramClient, events
 import datetime
 api_id = 7145550
 api_hash = "659da193100cfd421ce6aedf1ef6ea79"
+
 client = TelegramClient('anon', api_id, api_hash)
 # channel_id=1194185327
 # user_id=1704449472 Efe gencelli
@@ -39,7 +40,7 @@ async def main(event):
         print(f"{event.message.from_id.user_id} ___ {event.message.date}")
         f.write(f"{event.message.from_id.user_id} ___ {event.message.date}\n")
         f.close()
-    #for user in users:
+
     if (hasattr(event.message.from_id, "user_id") and varmi(users,event.message.from_id.user_id)) \
             or not hasattr(event.message.from_id, "user_id"):
         message_from_user_text = event.message.raw_text
