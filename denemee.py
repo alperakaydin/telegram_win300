@@ -9,12 +9,14 @@ client = TelegramClient('anon', api_id, api_hash)
 # user_id=1704449472 Efe gencelli
 # selma 1194185327
 # eren 987004745
-users = [1704449472, 817741597, 1194185327, 987004745, 1274728384, 1567439376, 878428601 ]
+# emre 1572434674
+users = [1704449472, 817741597, 1321541491, 1194185327, 987004745, 1274728384, 1567439376, 878428601 ]
 id_name = {
     1704449472: "Efe Gencelli",
     1194185327: "Selma",
     987004745: "Eren",
-    1567439376: "Elif"
+    1567439376: "Elif",
+    1321541491: "Emre"
 }
 def varmi(id_list,id):
     for user in id_list:
@@ -29,7 +31,7 @@ def isimbul(id):
         return "NoName"
 
 
-@client.on(events.NewMessage())  # (from_users=users)  chats=1194185327
+@client.on(events.NewMessage(chats=1194185327))  # (from_users=users)  chats=1194185327
 async def main(event):
     await client.start()
     print("--------")
@@ -104,3 +106,5 @@ with client:
     client.run_until_disconnected()
 
 
+if __name__ == "__main__":
+    main()
