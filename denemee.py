@@ -16,7 +16,8 @@ id_name = {
     1194185327: "Selma",
     987004745: "Eren",
     1567439376: "Elif",
-    1321541491: "Emre"
+    1321541491: "Emre",
+    1099086328: "Alper"
 }
 def varmi(id_list,id):
     for user in id_list:
@@ -31,7 +32,7 @@ def isimbul(id):
         return "NoName"
 
 
-@client.on(events.NewMessage(chats=1194185327))  # (from_users=users)  chats=1194185327
+@client.on(events.NewMessage())  # (from_users=users)  chats=1194185327 chats=[1194185327, 1567439376, 1099086328]
 async def main(event):
     await client.start()
     print("--------")
@@ -57,48 +58,48 @@ async def main(event):
                 reply_message = await event.message.get_reply_message()
 
                 if reply_message.message and message_from_user_text:
-                    await client.send_message('Sub-Win300', f'__{reply_message.message}__\n#{sender_name} {message_from_user_text}'
+                    await client.send_message('subwin300', f'__{reply_message.message}__\n#{sender_name} {message_from_user_text}'
                                               , file=path)
-                    # await client.send_file('Sub-Win300', path)
+                    # await client.send_file('subwin300', path)
                     print(f"ALINTI         :{reply_message.message}")
                     print(f"ALINTI USER ID :{reply_message.from_id}")
                     print(f"USER ID        :{event.from_id}")
                     print(f"MESSAGE        :{message_from_user_text}")
                 elif reply_message.message:
-                    await client.send_message('Sub-Win300', f'__{reply_message.message}__', file=path)
+                    await client.send_message('subwin300', f'__{reply_message.message}__', file=path)
                 elif message_from_user_text:
-                    await client.send_message('Sub-Win300', f'#{sender_name} {message_from_user_text}', file=path)
+                    await client.send_message('subwin300', f'#{sender_name} {message_from_user_text}', file=path)
                 else:
-                    await client.send_message('Sub-Win300', f'#{sender_name} ', file=path)
+                    await client.send_message('subwin300', f'#{sender_name} ', file=path)
 
             else: # ALINTI YOK
                 if message_from_user_text:
-                    await client.send_message('Sub-Win300', f'#{sender_name} {message_from_user_text}', file=path)
+                    await client.send_message('subwin300', f'#{sender_name} {message_from_user_text}', file=path)
                     print(f"USER ID :{event.from_id}")
                     print(f"MESSAGE :{message_from_user_text}")
                 else:
-                    await client.send_message('Sub-Win300', f'#{sender_name} ', file=path)
+                    await client.send_message('subwin300', f'#{sender_name} ', file=path)
         else:
             if event.message.is_reply:  # ALINTI
                 reply_message = await event.message.get_reply_message()
 
                 if reply_message.message and message_from_user_text:
-                    await client.send_message('Sub-Win300', f'__{reply_message.message}__\n#{sender_name} {message_from_user_text}')
-                    # await client.send_file('Sub-Win300', path)
+                    await client.send_message('subwin300', f'__{reply_message.message}__\n#{sender_name} {message_from_user_text}')
+                    # await client.send_file('subwin300', path)
                     print(f"ALINTI         :{reply_message.message}")
                     print(f"ALINTI USER ID :{reply_message.from_id}")
                     print(f"USER ID        :{event.from_id}")
                     print(f"MESSAGE        :{message_from_user_text}")
                 elif reply_message.message:
-                    await client.send_message('Sub-Win300', f'__{reply_message.message}__')
+                    await client.send_message('subwin300', f'__{reply_message.message}__')
                 elif message_from_user_text:
-                    await client.send_message('Sub-Win300', f'#{sender_name} {message_from_user_text}')
+                    await client.send_message('subwin300', f'#{sender_name} {message_from_user_text}')
 
             else:  # ALINTI YOK
                 if message_from_user_text:
                     chat = await event.get_chat()
                     #print(chat.stringify())
-                    await client.send_message('Sub-Win300', f'#{sender_name} {message_from_user_text}')
+                    await client.send_message('subwin300', f'#{sender_name} {message_from_user_text}')
                     print(f"USER ID :{event.from_id}")
                     print(f"MESSAGE :{message_from_user_text}")
 
