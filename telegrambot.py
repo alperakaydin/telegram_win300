@@ -1,8 +1,8 @@
 
 from telethon import TelegramClient, events
 import datetime
-api_id = 7145550
-api_hash = "659da193100cfd421ce6aedf1ef6ea79"
+api_id = 20028747
+api_hash = "adc488aad25204ce236bdcb19cf00759"
 
 client = TelegramClient('anon', api_id, api_hash)
 # channel_id=1194185327
